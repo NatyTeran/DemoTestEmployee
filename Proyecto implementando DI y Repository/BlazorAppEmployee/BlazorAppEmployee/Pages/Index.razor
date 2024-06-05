@@ -1,0 +1,36 @@
+﻿@page "/"
+@inject Test.Domain.Interfaces.IEmpleadoService EmpleadoService
+
+<h3>Empleados</h3>
+
+@if (Empleados == null)
+{
+    <p><em>Sin datos...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Puesto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empleado in Empleados)
+            {
+                <tr>
+                    <td>@empleado.Nombre</td>
+                    <td>@empleado.Apellido</td>
+                    <td>@empleado.PuestoId</td>
+                    <td>
+                        @* <button @onclick="() => EditarEmpleado(empleado.Id)">Editar</button> *@
+                        <button @onclick="() => EliminarEmpleado(empleado.Id)">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

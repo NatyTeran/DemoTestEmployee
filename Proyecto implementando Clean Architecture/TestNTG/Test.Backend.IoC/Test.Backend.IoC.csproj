@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Test.ADO.Repositories\Test.ADO.Repositories.csproj" />
+    <ProjectReference Include="..\Test.Controllers\Test.Controllers.csproj" />
+    <ProjectReference Include="..\Test.UseCases\Test.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>
