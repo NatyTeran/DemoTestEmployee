@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Domain", "Test.Domain\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Infraestructure", "Test.Infraestructure\Test.Infraestructure.csproj", "{EC9A4501-8A74-4D60-94C6-58D4CF0FDA18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WebApi", "Test.WebApi\Test.WebApi.csproj", "{55E6D062-DCD2-4C12-95F0-A02D33B47A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.WebApi", "Test.WebApi\Test.WebApi.csproj", "{55E6D062-DCD2-4C12-95F0-A02D33B47A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Services", "Test.Services\Test.Services.csproj", "{6ADA9C09-ECFE-447D-B09D-4E9EF2B6601D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Services", "Test.Services\Test.Services.csproj", "{6ADA9C09-ECFE-447D-B09D-4E9EF2B6601D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.BlazorApp", "Test.BlazorApp\Test.BlazorApp.csproj", "{690D9BBE-F49D-4366-8C6A-BC1CFEDFEADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6ADA9C09-ECFE-447D-B09D-4E9EF2B6601D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ADA9C09-ECFE-447D-B09D-4E9EF2B6601D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ADA9C09-ECFE-447D-B09D-4E9EF2B6601D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690D9BBE-F49D-4366-8C6A-BC1CFEDFEADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690D9BBE-F49D-4366-8C6A-BC1CFEDFEADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690D9BBE-F49D-4366-8C6A-BC1CFEDFEADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690D9BBE-F49D-4366-8C6A-BC1CFEDFEADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 ﻿namespace Test.Domain.Entities;
-public class Puesto
+public class Position
 {
     public int Id { get; set; }
     public string Nombre { get; set; }

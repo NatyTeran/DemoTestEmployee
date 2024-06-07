@@ -4,17 +4,17 @@ namespace BlazorAppEmployee.Pages
 {
     public partial class Index
     {
-        private IEnumerable<Empleado> Empleados;
+        private IEnumerable<Employee> Empleados;
 
         protected override async Task OnInitializedAsync()
         {
-            Empleados = await EmpleadoService.GetEmpleados();
+            Empleados = await EmpleadoService.GetEmployees();
         }
 
         private async Task EliminarEmpleado(int id)
         {
-            await EmpleadoService.DeleteEmpleado(id);
-            Empleados = await EmpleadoService.GetEmpleados();
+            await EmpleadoService.DeleteEmployee(id);
+            Empleados = await EmpleadoService.GetEmployees();
         }
     }
 }

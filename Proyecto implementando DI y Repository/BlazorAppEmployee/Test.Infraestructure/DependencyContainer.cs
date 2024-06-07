@@ -11,8 +11,8 @@ public static class DependencyContainer
         this IServiceCollection services,
         IOptions<ConnectionStringsOptions> options)
     {
-        services.AddScoped<IEmpleadoRepository>(provider =>
-            new EmpleadoRepository(options.Value.TestDatabase));
+        services.AddScoped<IEmployeeRepository>(provider =>
+            new EmployeeRepository(options.Value.TestDatabase));
 
         return services;
     }

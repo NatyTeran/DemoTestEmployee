@@ -7,7 +7,10 @@ public static class DependencyContainer
     public static IServiceCollection AddTestServices(
         this IServiceCollection services)
     {
-        services.AddScoped<IEmpleadoService, EmpleadoService>();
+        services.AddScoped<IStateService, StateService>();
+        services.AddScoped<IEmployeeService, EmployeeService>();
+        services.AddScoped<IPositionService, PositionService>();
+
         return services;
     }
 }

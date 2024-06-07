@@ -1,23 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Test.Domain.DTOs;
 using Test.Domain.Entities;
 using Test.Domain.Interfaces;
+using Test.Domain.Mappers;
 
 namespace Test.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmpleadoController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
-        private readonly IEmpleadoRepository Repository;
+        private readonly IEmployeeRepository Repository;
 
-        public EmpleadoController(IEmpleadoRepository repository)
+        public EmployeeController(IEmployeeRepository repository)
         {
             Repository = repository;
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Empleado empleado)
+        public ActionResult Post([FromBody] EmployeeDto empleado)
         {
             if (!ModelState.IsValid)
             {
@@ -25,7 +27,7 @@ namespace Test.WebApi.Controllers
             }
             try
             {
-                var result = Repository.Add(empleado);
+                var result = Repository.Add(empleado.ToEmployeeEntity()); ;
                 if (result != null)
                 {
                     return Created(new Uri(Url.Link("GetById", new { id = result.Id })), result);
@@ -42,7 +44,7 @@ namespace Test.WebApi.Controllers
         }
 
         [HttpPut]
-        public ActionResult Put([FromBody] Empleado empleado)
+        public ActionResult Put([FromBody] EmployeeDto empleado)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +52,7 @@ namespace Test.WebApi.Controllers
             }
             try
             {
-                var result = Repository.Update(empleado);
+                var result = Repository.Update(empleado.ToEmployeeEntity());
                 if (result != null)
                 {
                     return Ok(result);
@@ -84,7 +86,7 @@ namespace Test.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Empleado>> GetAll()
+        public async Task<IEnumerable<Employee>> GetAll()
         {
             return await Repository.GetAll();
         }

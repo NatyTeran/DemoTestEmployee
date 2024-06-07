@@ -1,5 +1,5 @@
 ﻿namespace Test.Domain.Entities;
-public class Empleado
+public class Employee
 {
     public int Id { get; set; }
     public string Fotografia { get; set; }

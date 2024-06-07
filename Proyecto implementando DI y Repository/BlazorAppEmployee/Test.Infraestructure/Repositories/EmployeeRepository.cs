@@ -4,16 +4,16 @@ using Test.Domain.Interfaces;
 
 namespace Test.Infraestructure.Repositories
 {
-    public class EmpleadoRepository : IEmpleadoRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly string ConnectionString;
 
-        public EmpleadoRepository(string connectionString)
+        public EmployeeRepository(string connectionString)
         {
             ConnectionString = connectionString;
         }
 
-        public async Task Add(Empleado empleado)
+        public async Task Add(Employee empleado)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -44,9 +44,9 @@ namespace Test.Infraestructure.Repositories
             }
         }
 
-        public async Task<IEnumerable<Empleado>> GetAll()
+        public async Task<IEnumerable<Employee>> GetAll()
         {
-            var empleados = new List<Empleado>();
+            var empleados = new List<Employee>();
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -55,7 +55,7 @@ namespace Test.Infraestructure.Repositories
                 {
                     while (reader.Read())
                     {
-                        empleados.Add(new Empleado
+                        empleados.Add(new Employee
                         {
                             Id = (int)reader["Id"],
                             Fotografia = reader["Fotografia"].ToString(),
@@ -75,9 +75,9 @@ namespace Test.Infraestructure.Repositories
             return empleados;
         }
 
-        public async Task<Empleado> GetById(int id)
+        public async Task<Employee> GetById(int id)
         {
-            Empleado empleado = null;
+            Employee empleado = null;
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -87,7 +87,7 @@ namespace Test.Infraestructure.Repositories
                 {
                     if (reader.Read())
                     {
-                        empleado = new Empleado
+                        empleado = new Employee
                         {
                             Id = (int)reader["Id"],
                             Fotografia = reader["Fotografia"].ToString(),
@@ -107,7 +107,7 @@ namespace Test.Infraestructure.Repositories
             return empleado;
         }
 
-        public async Task Update(Empleado empleado)
+        public async Task Update(Employee empleado)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {

@@ -1,0 +1,47 @@
+﻿@using Test.Domain.ValueObjects
+
+<div class="form-field">
+    <label>Calle:</label>
+    <div>
+        <InputText class="form-control" @bind-Value="Address.Calle" />
+        <ValidationMessage For="@(() => Address.Calle)" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Número Exterior:</label>
+    <div>
+        <InputText class="form-control" @bind-Value="Address.NumExt" />
+        <ValidationMessage For="@(() => Address.NumExt)" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Número Interior:</label>
+    <div>
+        <InputText class="form-control" @bind-Value="Address.NumInt" />
+        <ValidationMessage For="@(() => Address.NumInt)" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Colonia:</label>
+    <div>
+        <InputText class="form-control" @bind-Value="Address.Colonia" />
+        <ValidationMessage For="@(() => Address.Colonia)" />
+    </div>
+</div>
+
+<div class="form-field">
+    <label>Código Postal:</label>
+    <div>
+        <InputText class="form-control" @bind-Value="Address.CodigoPostal" />
+        <ValidationMessage For="@(() => Address.CodigoPostal)" />
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter] public Address Address { get; set; }
+}
